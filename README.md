@@ -1,6 +1,6 @@
 # vagrant-docker-graylog
 
-Vagrant environment with Docker and Docker Compose installed running [Graylog](https://www.graylog.org/) containers.
+Vagrant environment with Docker and Docker Compose installed running [Graylog](https://www.graylog.org/).
 
 ## Starting the vagrant box:
 
