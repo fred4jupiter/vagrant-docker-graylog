@@ -5,6 +5,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/xenial64"
  
  config.vm.network "forwarded_port", guest: 9000, host: 9000
+ config.vm.network "forwarded_port", guest: 12201, host: 12201
 
  config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--memory", "4096"]
@@ -34,5 +35,5 @@ Vagrant.configure(2) do |config|
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
   config.vm.provision "shell", path: "install_docker.sh" 
   config.vm.provision "shell", path: "install_docker-compose.sh"
-  config.vm.provision "shell", inline: "docker-compose up -d"
+  config.vm.provision "shell", inline: "cd /vagrant && docker-compose up -d"
 end
